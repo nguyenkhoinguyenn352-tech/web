@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Nguyên Web</title>
+
+<style>
+    body{
+        margin:0;
+        font-family:Arial;
+        background:#f8f5ff;
+        color:#333;
+    }
+    header{
+        background:#7a2ff1;
+        padding:15px 25px;
+        color:white;
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+    }
+    nav a{
+        color:white;
+        margin-left:20px;
+        text-decoration:none;
+        font-weight:bold;
+        cursor:pointer;
+    }
+    nav a:hover{opacity:0.7;}
+    #app{
+        padding:30px;
+        animation:fade .3s;
+    }
+    @keyframes fade{
+        from{opacity:0;}
+        to{opacity:1;}
+    }
+    .product{
+        background:white;
+        padding:15px;
+        margin:10px 0 25px 0;
+        border-radius:10px;
+        box-shadow:0 3px 8px rgba(0,0,0,0.1);
+    }
+    .product img{
+        width:100%;
+        border-radius:10px;
+        margin-top:10px;
+    }
+</style>
+
+</head>
+<body>
+
+<header>
+    <h2>Nguyên Web</h2>
+    <nav>
+        <a onclick="loadPage('home')">Home</a>
+        <a onclick="loadPage('products')">Products</a>
+        <a onclick="loadPage('contact')">Contact</a>
+    </nav>
+</header>
+
+<div id="app"></div>
+
+<script>
+    function loadPage(page){
+
+        // HOME
+        if(page === "home"){
+            app.innerHTML = `
+                <h1>Welcome to Nguyên Web</h1>
+                <p>This is the homepage of the assignment website.</p>
+                <img src="https://picsum.photos/800/300?random=1"
+                     style="width:100%;border-radius:15px;margin-top:15px;">
+            `;
+        }
+
+        // PRODUCTS – 3 SẢN PHẨM THẬT
+        if(page === "products"){
+            app.innerHTML = `
+                <h1>Products</h1>
+
+                <div class="product">
+                    <h3>iPhone 15 Pro Max</h3>
+                    <p>Flagship smartphone with A17 Pro chip and titanium design.</p>
+                    <img src="https://www.apple.com/v/iphone-15-pro/a/images/overview/design/design_top__eph5f26j9l2i_large.jpg">
+                </div>
+
+                <div class="product">
+                    <h3>AirPods Pro 2</h3>
+                    <p>Active noise cancellation, Adaptive Audio, USB-C charging.</p>
+                    <img src="https://www.apple.com/v/airpods-pro/b/images/overview/airpods_pro_hero__x8ru0tv0jxea_large.jpg">
+                </div>
+
+                <div class="product">
+                    <h3>MacBook Air M2</h3>
+                    <p>Lightweight laptop with Apple M2 chip and 18-hour battery life.</p>
+                    <img src="https://www.apple.com/v/macbook-air-m2/b/images/overview/hero/hero_static__c9sxxk3on9em_large.jpg">
+                </div>
+            `;
+        }
+
+        // CONTACT
+        if(page === "contact"){
+            app.innerHTML = `
+                <h1>Contact</h1>
+                <p><b>Name:</b> nguyen web</p>
+                <p><b>Email:</b> nguyenkhoinguyen352@gmail.com</p>
+                <p><b>Phone:</b> 0936248218</p>
+
+                <img src="https://picsum.photos/800/300?random=5"
+                     style="width:100%;border-radius:15px;margin-top:15px;">
+            `;
+        }
+    }
+
+    // Load trang Home lúc vào web
+    loadPage("home");
+</script>
+
+</body>
+</html>
